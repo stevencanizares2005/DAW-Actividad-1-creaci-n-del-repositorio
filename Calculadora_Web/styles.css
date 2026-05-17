@@ -1,0 +1,101 @@
+/*  1. ESTILOS GENERALES Y FONDO */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #1e1e24; /* Un fondo gris oscuro moderno */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Centra la calculadora verticalmente en la pantalla */
+}
+
+/* 2. CONTENEDOR DE LA CALCULADORA */
+.calculadora {
+    background-color: #000000; /* Fondo negro para el cuerpo de la calculadora */
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.5);
+    width: 350px; /* Ancho fijo para que no se desarme */
+}
+
+/* 3. PANTALLA DE RESULTADOS */
+#pantalla {
+    width: 100%;
+    height: 70px;
+    background-color: #000000;
+    border: none;
+    color: #ffffff; /* Texto blanco */
+    text-align: right; /* Los números se alinean a la derecha como una calculadora real */
+    font-size: 2.5rem;
+    padding: 10px;
+    margin-bottom: 20px;
+    outline: none;
+}
+
+/* 4. LA REJILLA DE BOTONES (CSS GRID) */
+.botones {
+    display: grid;
+    /* Crea 4 columnas del mismo tamaño */
+    grid-template-columns: repeat(4, 1fr); 
+    /* Espacio de 10px entre cada botón */
+    gap: 10px; 
+}
+
+/* 5. ESTILOS DE LOS BOTONES */
+.btn {
+    height: 65px;
+    border-radius: 50%; /* Botones completamente redondos estilo iPhone */
+    border: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    
+    /* Colores por defecto para los números */
+    background-color: #333333;
+    color: #ffffff;
+}
+
+/* Efecto cuando pasas el mouse por encima de un número */
+.btn:hover {
+    background-color: #555555;
+}
+
+/* Botones de operaciones (+, -, *, /) */
+.btn-operador {
+    background-color: #f1a33c; /* Color naranja naranja */
+    color: #ffffff;
+}
+
+.btn-operador:hover {
+    background-color: #df8f2b;
+}
+
+/* Botón de borrar (C) */
+.btn-clear {
+    background-color: #a5a5a5;
+    color: #000000; /* Texto negro para resaltar */
+}
+
+.btn-clear:hover {
+    background-color: #8e8e8e;
+}
+
+/* Modificación para el botón Cero (ocupa dos columnas) */
+.btn-cero {
+    grid-column: span 2; /* Le dice al botón que se estire el doble */
+    border-radius: 30px; /* Ya no puede ser círculo perfecto, pasa a ser un óvalo */
+    text-align: left;
+    padding-left: 25px;
+}
+
+/* Botón de Igual (=) */
+.btn-igual {
+    background-color: #f1a33c;
+    color: #ffffff;
+}

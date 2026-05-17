@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Web</title>
+    <!-- Enlazamos los estilos CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Contenedor principal de la calculadora -->
+    <div class="calculadora">
+        
+        <!-- Pantalla donde se mostrarán los números y resultados -->
+        <input type="text" id="pantalla" readonly value="0">
+
+        <!-- Contenedor de los botones -->
+        <div class="botones">
+            <!-- Fila 1: Limpiar y operaciones avanzadas -->
+            <button class="btn btn-clear" onclick="limpiarPantalla()">C</button>
+            <button class="btn btn-operador" onclick="agregarOperador('/')">/</button>
+            <button class="btn btn-operador" onclick="agregarOperador('*')">*</button>
+            <button class="btn btn-operador" onclick="agregarOperador('-')">-</button>
+
+            <!-- Fila 2: Números y Suma -->
+            <button class="btn" onclick="agregarNumero('7')">7</button>
+            <button class="btn" onclick="agregarNumero('8')">8</button>
+            <button class="btn" onclick="agregarNumero('9')">9</button>
+            <button class="btn btn-operador" onclick="agregarOperador('+')">+</button>
+
+            <!-- Fila 3: Números -->
+            <button class="btn" onclick="agregarNumero('4')">4</button>
+            <button class="btn" onclick="agregarNumero('5')">5</button>
+            <button class="btn" onclick="agregarNumero('6')">6</button>
+
+            <!-- Fila 4: Números, Cero e Igual -->
+            <button class="btn" onclick="agregarNumero('1')">1</button>
+            <button class="btn" onclick="agregarNumero('2')">2</button>
+            <button class="btn" onclick="agregarNumero('3')">3</button>
+            
+            <button class="btn btn-cero" onclick="agregarNumero('0')">0</button>
+            <button class="btn" onclick="agregarNumero('.')">.</button>
+            <button class="btn btn-igual" onclick="calcularResultado()">=</button>
+        </div>
+
+    </div>
+
+    <!-- Enlazamos la lógica de JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
